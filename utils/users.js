@@ -38,8 +38,11 @@ function userLeave(user)
 {
     
     // console.log(player_left+" "+user.id);
-    // console.log(users);
-   
+     
+   if(users[user.id].opponent)
+    users[users[user.id].opponent].opponent = null;
+   delete users[user.id];
+   console.log(users);
    if(player_left == user.id)
     player_left = null;
 }
